@@ -2,7 +2,9 @@
 
 ### Multi-Dimensional Basis Expansion Linear Regression w/ L2 Regularization
 [Problem Description](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw2/HW2.txt)
+
 [Results](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw2/answers.pdf)
+
 [Code](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw2/LS_Regression.m)
 
 ### Multi-Dimensional Linear Discriminant Analysis & Logistic Regression w/ L2 Regularization
