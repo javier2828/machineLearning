@@ -1,37 +1,39 @@
-## Welcome to GitHub Pages
+## Machine Learning Projects (From Scratch w/ MATLAB)
 
-You can use the [editor on GitHub](https://github.com/javier2828/machineLearning/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+### Multi-Dimensional Basis Expansion Linear Regression w/ L2 Regularization
+[Problem Description](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw2/HW2.txt)
+[Results](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw2/answers.pdf)
+[Code](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw2/LS_Regression.m)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### Multi-Dimensional Linear Discriminant Analysis & Logistic Regression w/ L2 Regularization
+[Problem Description](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw3/HW3.txt)
+[Results](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw3/results.pdf)
+[LDA Code](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw3/script_lda.m)
+[LR Code](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw3/script_lr.m)
 
-### Markdown
+### Natural Cubic Splines Interpolation & Leave-One-Out Cross-Validation
+[Problem Description](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw4/HW4.txt)
+[Results](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw4/answers.pdf)
+[Interpolation Code](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw4/cubicCode.m)
+[CV Code](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw4/nls.m)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Classifying USPS Digit Data Using Expectation-Maximization Algortihm on Gaussian Mixture Models
+[Problem Description](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw5/HW5.txt)
+[Results](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw5/answers.pdf)
+[Code](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw5/script_em.m)
 
-```markdown
-Syntax highlighted code block
+### Classifying USPS Handwritten Digits using Multi-Layer Perceptron (Neural Network)
+[Problem Description](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw6/HW6.txt)
+[Results](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw6/results.pdf)
+[Code](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw6/script_neural.m)
 
-# Header 1
-## Header 2
-### Header 3
+### k-Nearest Neighbor Classification 
+[Problem Description](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw7/HW7.txt)
+[Results](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw7/report.pdf)
+[Code (Single K)](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw7/singleK.m)
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/javier2828/machineLearning/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### k-Means Clustering & Dimensionality Reduction (Principal Component Analysis)
+[Problem Description](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw8/HW8.txt)
+[Results](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw8/results.pdf)
+[Clustering Code Only](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw8/cluster.m)
+[Clustering + PCA Code](https://github.com/javier2828/machineLearning/blob/master/Machine%20Learning/hw8/script_clusters.m)
