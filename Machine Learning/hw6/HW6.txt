@@ -1,0 +1,63 @@
+Upload a file on Canvas called answers.pdf where you will type your written answers and provide the plots or values requested. The running script should be named script_neural.mat (or script_neural.py) that will run and test your neural network back-propagation algorithm.
+
+You will write a script that will implement and train neural networks, using the backpropagation algorithm described in the slides on neural networks. Regarding backpropagation, you should follow exactly the formulas and specifications on those slides.
+
+The input arguments to the program should be the  following:
+
+ 
+
+    The first argument will specify the training file, where the training data is stored.
+    The second argument will specify the test file, where the test data is stored.
+    The third argument specifies how many layers to use. Note that the input layer is layer 1, so the number of layers cannot be smaller than 2.
+    The fourth argument specifies how many perceptrons to place at each hidden layer. Note that this number is not applicable to units in the input layer, since those units are not perceptrons but simply provide the values of the input object and the bias input (equal to 1). Also, note that the number of perceptrons in the output layer is equal to the number of classes (here 10), and thus this number is independent of the argument.
+    The fifth argument, specifies the number of rounds you will run all the training data to learn the perceptron weights.
+
+ 
+
+Training Phase
+
+During training:
+
+ 
+
+    Every perceptron should have a bias input which is set to 1. The weight of that bias input is changed during back-propagation, and is treated exactly the same way as any other weight.
+    For each dataset, for all training and test objects in that dataset, you should normalize all attributes, by dividing them with the MAXIMUM value over all attributes over all training data.
+    The weights of each unit in the network should be initialized to random values, chosen between -.05 and 0.05.
+    You should initialize your step-size (\eta) to 1 for the first training round, and then multiply it by 0.98 for each subsequent training round. So, the learning rate used for training round r should be 0.98r - 1.
+    Your stopping criterion should simply be the number of training rounds, which is specified as the fifth command-line argument. The number of training rounds specifies how many times you iterate over the entire training set.
+
+ 
+
+About the Layers
+
+    Layer 1 is the input layer. Thus, 2 is the minimum legal value for L.
+    Each perceptron at layer 2 has D+1 inputs, where D is the number of attributes and the +1 refers to the bias .
+    Layer L is the output layer, containing as many perceptrons as the number of classes.
+    If L > 2, then layers 2, ..., L-1 are the hidden layers. Each of these layers has as many perceptrons as specified in the third argument.
+    If L > 2, each perceptron at layers 3, ..., L has as inputs the outputs of ALL perceptrons at the previous layer, in addition to the bias input.
+     
+
+Testing/Classification
+
+For each test object you should print a line containing the following info:
+
+ 
+
+    Datum ID. This is the line number where that datum occurs in the test file. Start with 1 in numbering the objects
+    Predicted class (the result of the classification). If your classification result is a tie among two or more classes, choose one of them randomly.
+    True class (from the last column of the test file).
+
+Report your classification accuracy for different number of layers and perceptrons per layer. You can try any values you want for the number of layers and perceptrons per layer. Report the classification accuracy and corresponding NN architecture using a table in answers.pdf
+
+ 
+
+Here are a few details about the training and testing files:
+
+ 
+
+    1) USPS handwritten digits: Each row of the training file contains 17 numbers. The first 16 correspond to features extracted from a digital image of a handwritten digit. The last column is the label which indicates what digit the first 16 numbers represent. There are 10 different classes.
+
+                Training file herePreview the document
+                Testing file herePreview the document
+
+ 

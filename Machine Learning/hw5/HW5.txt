@@ -1,0 +1,72 @@
+Upload a file on blackboard called answers.pdf where you will type your written answers and provide the plots or values requested. The running script should be named script_em.mat (or script_em.py) that will run and test your EM  algorithm.
+
+Problem 1
+
+ You have to write a script that performs classification via the E-M algorithm.
+
+EM Algorithm
+
+The objective here is to estimate the posterior class probabilities via a Q-component Gaussian mixture probability density function. The training set provided later has data from 10 different classes. This means that you will form 10 different groups of data where in each group the data belong to the same class.
+
+For the data that belong to a certain class c, for c=1,…,10,  you will find the parameters of a Q-component Gaussian mixture that will estimate p(x|c) which corresponds to the conditional pdf of the data assuming they belong to class c. Now each input training datum x  has 8 entries (a.k.a input attributes), thus it is an 8 dimensional vector. The EM algorithm we saw in class works with scalar data. To enable it to work with 8 dimensional vectors (while keeping the computational burden low; there are multidimensional EM extensions but they go beyond the scope of this assignment) we will consider the following approximation for the likelihood pdf:
+
+p(x|c)=p(x1|c)p(x2|c)p(x3|c)p(x4|c)p(x5|c)p(x6|c)p(x7|c)p(x8|c),
+
+where we assumed that the different entries are independent from each other (may not be true in practice but simplifies things a lot). Each scalar likelihood p(xi|c), assuming data are taken from class c,  for i=1,…,8 will be approximated by a Q-component Gaussian mixture.
+
+Thus, you will build a mixture of Q Gaussians for the i-th dimension of the data for i=1,…,8, and for each class c, for c=1,…,10. Let m be the smallest and M be the largest value in the i-th dimension among all training data belonging to the c-th class. Let D = (M-m)/Q. Initialize all standard deviations of the mixture to 1, you should initialize all weights to 1/Q, and you should initialize the means as follows:
+
+    For the first Gaussian, the initial mean should be m + D/2.
+    For the second Gaussian, the initial mean should be m + D + D/2.
+    For the third Gaussian, the initial mean should be m + 2D + D/2.
+    ...
+    For the Q-th Gaussian, the initial mean should be m + (Q-1)D + D/2.
+
+ 
+
+You should repeat the main loop of the EM algorithm for a number of times it works ok (you can use the termination criterion we saw in class).
+
+It is possible that during the M-step  a standard deviation may be calculated to be zero. Your code should make sure that the variance of the Gaussian is never smaller than 0.001, if it is you should replace that value with 0.001 to avoid numerical instabilities.
+
+The output of the training phase should be a sequence of lines having the following format:
+
+Class Number= value, Attribute Number=value, Gaussian Component=value, Mean = value, STDEV = value
+
+ 
+
+Short the output line by the class number c=1,..,10. Within the same class, sort the lines by attribute number i=1,…,8. Within the same attribute, lines should be sorted by Gaussian number q=1,…,Q.
+
+ 
+
+Testing Phase
+
+During testing you will have to evaluate the posterior pdfs p(c|x) for c=1,…,10  for each testing datum x and determine which one is largest, and classify x as
+
+                                                                              G(x)=arg max_{c=1,..,.10} p(c|x).
+
+To evaluate p(c|x) for each c you will have to use the Bayes rule where
+
+ 
+
+                                                                                        p(c|x) ~ p(x|c)p(c)
+
+where p(x|c) you found them during the training phase and p(c) can be estimated from the training data using the frequentist approach.
+
+ 
+
+The testing classification error probability should be reported in answers.pdf, while your script should print it as well when running. Also, evaluate the confusion matrix P which is a 10 x 10 matrix whose P(i,j) entry is the estimated probability that a datum from class i  is classified using your approach as a datum from class j. Your script should return this matrix, which should also be given in your answers.pdf.
+
+Finally, you should plot the testing classification error as a function of Q (the number of Gaussians used in the mixture). Set Q to values 1:1:5.
+
+ 
+
+Here are a few details about the training and testing files:
+
+ 
+
+    The training set (download here)Preview the document consists of nine columns separated by space. The first 8 columns correspond to the input training features, while the last column corresponds to the label (output) of each training datum.  The training set contains 1000 rows that correspond to 1000 different training data (input+label). There are 10 different labels numbered 1,…,10.
+
+ 
+
+    The testing set (download here)Preview the document also has 9 columns. It contains 484 test data. The last column will be used only to compare the testing labels with the ones your classification methods provide to calculate the testing classification error probability.
+

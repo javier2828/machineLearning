@@ -1,0 +1,63 @@
+Upload a file on Canvas called answers.pdf as well as your script for Problem 6 as script6.mat (or script6.py)
+
+ 
+
+Problem 1 (20 Points)
+
+Assume that you have placed temperature sensors in different locations in the US.  These sensors are set to automatically text you, each day, the low temperature for that day. Unfortunately, you have forgotten whether you placed a specific sensor S in DFW or in Minneapolis (but you are sure you placed it in one of those two places) . The probability that you placed sensor S in DFW is 20%. The probability of getting a daily low temperature of 40 degrees or less is 20% in DFW and 80% in Minneapolis. The probability of a daily low for any day is conditionally independent of the daily low for any other day, given the location of the sensor. The sensor stays at a single place throughout your observations, and it cannot change places from day to day (it is stationary). 
+
+1) If the first text you got from sensor S indicates a daily low above 40 degrees, what is the probability that the sensor is placed in DFW?
+
+2) If the first text you got from sensor S indicates a daily low above 40 degrees, what is the probability that the second text also indicates a daily low above 40 degrees?
+
+3) What is the probability that the first three texts all indicate daily lows above 40 degrees?
+
+ 
+
+Problem 2 (20 Points)  
+
+Let X and Y have joint pdf f(x,y)=k(x+y), for 0<=x<=1 and 0<=y<=1.     
+
+1) Find k.                                                                                         
+
+2) Find the joint cumulative density function of (X,Y)                             
+
+3) Find the marginal pdf of X and Y.                                                   
+
+4) Find Pr[Y<X2] and Pr[X+Y>0.5]
+
+ 
+
+Problem 3 (10 Points)
+
+Function P is a function defined on the set of real numbers. We do not know the value of P for all cases, but  it is known that P(x) = 0.3 when 0 <= x <= 10.  Is P definitely a probability density function, possibly a probability density function, or definitely not a probability density function? Explain your answer.
+
+ 
+
+Problem 4 (10 Points) 
+
+A and B are two Boolean events that are independent of each other. P(A) = 0.3 and P(B) = 0.6.
+Compute the following three quantities:
+
+1) P(A and B).
+2) P(A or B).
+3) P(A|B). 
+
+ 
+
+Problem 5 (10 Points)
+
+Function P is a function defined on a set S comprising of four atomic events, namely S = {A, B, C, D}. It is also known that P(A) = 0.3 and P(B) = 0.6. Is P definitely a probability function, possibly a probability function, or definitely not a probability function? Justify your answer.
+
+Problem 6 (30 Points)
+
+Consider a set of data with 40 training examples. The i-th training example is denoted as (xi, ti), where xi is the example input and ti is the target output. The target inputs xi can be found in Tri.txtPreview the document. Each xi is a three-dimensional vector denoted as (xi, 1, xi, 2, xi, 3). Row i and column j of Tri.txt gives the value xi, j. The training outputs ti can be downloaded from Tro.txtPreview the document. Each ti is a real number. Row i of Tro.txt contains the value for ti.
+
+Following the linear regression notation in class:
+
+    Let w be a four dimensional vector (w0 ,w1, w2, w3).
+    Define the predictor y(xi, w) as follows: y(xi, w) = w0+w1 * xi, 1 + w2 * xi, 2 + w3 * xi, 3.
+
+1) Using the least-squares in linear regression find the optimal w coefficients and give the resulting training error E(w).
+
+2) Using regularized regression for values of λ interval [0,1]   again find the optimal w coefficients and give the resulting training error E(w).

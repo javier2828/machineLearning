@@ -1,0 +1,50 @@
+Upload a file on Canvas called answers.pdf where you will type your written answers and provide the plots requested. The running script should be named script_lr.m and script_lda.m (or script_lr.py and script_lda.py)
+
+Problem 1 (100 Points)
+
+ You will write two scripts that implement the logistic regression algorithm using the recursive Newton-Raphson method, as well as the linear discriminant analysis (LDA) method we discussed in the class. 
+
+Your program should be able to process the training and testing data sets provided at the end.
+
+It will further have the following input arguments:
+
+    The first argument is the path name of the training file, where the training data is stored. The path name can specify any file stored on the local computer.
+    The second argument is the path name of the testing file, where the testing data is stored. The path name can specify any file stored on the local computer
+
+For the logistic regression method only:
+
+    The third argument is the order of the polynomial. The degrees to be tested are linear (d=1) and quadratic (d=2).
+    Suppose that you have an input vector x = (x1, x2, ..., xp)T.
+    If the degree is 1, then the rows of X will be formed using p+1 columns, i.e., (1, x1, x2, ..., xp).
+    If the degree is 2, then the rows of X will be formed as (1, x1, (x1)2, x2, (x2)2..., xp, (xp)2).
+
+ 
+
+    In class we discussed about logistic regression in a binary classification problem with two classes (0 or 1). Now in the files provided below there maybe more than 2 classes. To convert this to a binary classification problem i) just map class equal to 1 to y_i=1; and ii) all other classes different than 1 just map them to y_i=0. This way you only have to decide between classes 1 and 0.
+
+ 
+
+    The script once learning the \beta parameters using the training files, it will plot the values of the training classification probability and testing classification probability versus the number of training data that were used during the learning stage. You will use 5%, 25%, 50%, 75% and 100% of the training data and calculate the corresponding misclassification probability.
+    The training error is calculated by testing the logistic regression on the training data used, while the testing misclassification probability is calculated using the testing files. To calculate the misclassification probability use the frequentist approach, where you will count the number of labels that were predicted in error and divide with the total number of labels you are considering.
+    Repeat the last two bullets for the LDA approach too.
+
+ 
+
+    The following two data sets will be considered:
+    1) Yeast data: Each row of the training file contains 9 numbers. The first 8 correspond to input features. The last column is the label which indicates what  class the first 8 numbers represent. There are 9 different classes.
+
+ 
+
+                Training file herePreview the document
+                Testing file herePreview the document
+
+ 
+
+    2) Satellite images: Each row of the training file contains 37 numbers. The first 36  correspond to pixel values. The last number represents the class where that pixel belongs to (classes here correspond to different materials that are depicted by the pixels, e.g., soil, vegetation, water and so on).  There are 7 different classes.
+
+ 
+
+                Training file herePreview the document
+                Testing file herePreview the document
+
+ 

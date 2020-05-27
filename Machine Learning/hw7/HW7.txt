@@ -1,0 +1,30 @@
+Upload a file on blackboard called answers.pdf where you will type your written answers and provide the plots or values requested. The running script should be named script_nearest.mat (or script_nearest.py) that will run and test your nearest neighbor algorithm.
+
+ 
+
+ You have to write a script that implements k-nearest neighbor classification.
+
+    The first argument will specify the training file, where the training data is stored.
+    The second argument will specify the test file, where the test data is stored.
+    The third argument specifies the value of k for the k-nearest neighbor classifier.
+
+Training Phase
+
+During training:
+
+    Each dimension should be normalized, separately from all other dimensions. Specifically, for both training and test objects, each dimension should be transformed using function F(v) = (v - mean) / stdev, using the mean and stdev of the values of that dimension on the training file.
+    Use the Euclidean distance for computing the nearest neighbors.
+
+Report your classification accuracy for different values of k. Report the classification accuracy in answers.pdf
+
+ 
+
+Here are a few details about the training and testing files:
+
+ 
+
+    USPS handwritten digits: Each row of the training file contains 17 numbers. The first 16 correspond to features extracted from a digital image of a handwritten digit. The last column is the label which indicates what digit the first 16 numbers represent. There are 10 different classes.
+
+    Training file herePreview the document
+    Testing file herePreview the document
+

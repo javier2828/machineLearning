@@ -1,0 +1,60 @@
+Upload a file on blackboard called answers.pdf where you will type your written answers and provide the plots and values requested. The running script should be named nls.mat (or nls.py)
+
+ 
+
+Problem 1 (100 Points)
+
+ You have to write a script that performs natural cubic spline fitting. The objective is to find the underlying mapping given a collection of training data (scalar input X and scalar output Y), and estimate the expected prediction error (EPE) using cross-validation.
+
+Pick 5 knot points ξ1,ξ2, ξ3, ξ4 and ξ5 among the training X values such that the range of values they occupy is split in 6 approximately equal intervals.
+
+
+The output Y is following the model Y=f(X)+e, where f(X) is the unknown mapping you are looking for and e is the noise which is assumed to be zero mean Gaussian with variance 0.3.
+
+ 
+
+The model you are going to use is f(x)=θ1N1(x)+θ2N2(x)+θ3N3(x)+θ4N4(x)+θ5N5(x), where θi for i=1,2,3,4, 5 are the unknown coefficients you are trying to find and Ni(x) is a basis function. Since we are dealing with smooth spline fitting,  and we have 5 knot points we will need 5 basis functions (as shown in class)
+
+ 
+
+N1(x)=1
+
+N2(x)=x
+
+N3(x)=d1(x)-d4(x)
+
+N4(x)=d2(x)-d4(x)
+
+N5(x)=d3(x)-d4(x)
+
+where di(x)=(ξ5-ξi)-1[max((x-ξi)3,0)-max((x-ξ5)3,0)] for i=1,2,3,4.
+
+ 
+
+You will have to find the unknown parameters θi for i=1,2,3,4 and 5 as we discussed in class. This means you will have to form proper matrices N (matrix N will have size N X 5 , where N is the number of data used for training) and Ω, and then apply the methodology we saw in class.
+
+ 
+
+The script will have the following input arguments:
+
+    The first argument is the path name of the training file, where the training data is stored. The path name can specify any file stored on the local computer.
+    The second argument will be the smoothing parameter λ.
+
+
+For a fixed value of λ you will fit the model and then:
+
+ 
+
+Apply the cross-validation leave-one-out framework to estimate the EPE. Remember in the leave-one-out strategy you perform the learning/training step using all but one. Here you have a total of 201 data, thus you will use 200 training data, and you use the one left to perform testing and calculate the testing squared error for that single testing point left. Then, you sum the 201 squared-error terms you found and divide with 201. This is your EPE estimate.
+
+Steps 1 and 2 should be repeated for several values of  λ  in the interval [0:10^(-4):4].
+
+Plot the estimated EPE via cross-validation versus the value of  λ. Which value f  λ gives the lowest estimated EPE?
+
+For that value determine the number of degrees of freedom of the model and plot on the same figure the training data (X,Y) points along with the estimated function f(x)=θ1N1(x)+θ2N2(x)+θ3N3(x)+θ4N4(x)+θ5N5(x), where the θi for i=1,2,3,4 and 5  were found as described earlier.
+
+    The training set (download herePreview the document) consists of two columns separated by comma. The first column is the X training input data (201 total), and the second column is the output Y generated according to the model described at the beginning.
+
+ 
+
+Hint 1: The first order derivative of max((x-ξ)3,0), namely [max((x-ξ)3,0)]’, is equal to 3[max((x-ξ)2,0)]. From there you can find the second order derivative also needed to calculate matrix Ω.

@@ -1,0 +1,41 @@
+Upload a file on Canvas called answers.pdf where you will type your written answers and provide the plots or values requested. The running script should be named script_clusters.mat (or script_clusters.py) that will run and test the k-means clustering algorithm (with PCA).
+
+ 
+
+ You have to write a script that implements K-means clustering and PCA dimensionality reduction scheme.
+
+    The first argument will specify the data file where the input data are stored.
+    The second argument k will specify the number of clusters.
+    The third argument specifies the number of iterations of the main loop.
+    The fourth argument specifies the number of principal components obtained for each data vector (reduced dimension k). If dimensionality reduction is not applied then the argument should be equal to 16, in which case you keep all the attributes of each input vector.
+
+ 
+
+Implementation
+
+    Use the Euclidean distance for computing the distance between any two objects in the dataset.
+    First PCA will be employed to reduce the dimension of the data according to the value of the fourth argument and then the new vectors of reduced dimension will be used as input to the k-means clustering approach.
+
+Clustering
+
+    Plot the clustering  accuracy versus iteration index.  To calculate the clustering accuracy for each cluster determine the dominant class and then determine how many data members in the clusters are different than the dominant class. Add these numbers across all different clusters and divide with total number of  data. Give clustering accuracy curves versus reduced dimension k for different values chosen for the number of clusters in the interval [1, 10].
+
+
+PCA+Clustering
+
+Instead of using the data vectors you will first compress them using PCA. Compress each data vector to k=1,…15 principal components and use the dimensionality reduced data to perform clustering. Plot the clustering accuracy versus k.
+
+ 
+
+Report the clustering accuracy versus iteration index, and classification accuracy versus number of principal components k in answers.pdf
+
+ 
+
+Here are a few details about the data file:
+
+ 
+
+    Handwritten digits: Each row of the training file contains 17 numbers. The first 16 correspond to features extracted from a digital image of a handwritten digit. The last column is the label which indicates what digit the first 16 numbers represent. Recall that in performing clustering or PCA we do not need the label of the data. You will only use it to determine the clustering accuracy as specified earlier.
+
+    Data file herePreview the document
+
